@@ -4,9 +4,8 @@ import sys, string, os, subprocess, sched, time,re,datetime,shutil
 
 
 
-folder='C:\\Users\\MMusa\\Desktop\\c' # Roaming Profiles
 
-adminpass() # call admin pass, so we can use password variables
+
 
 server = Server('Microsoft.com', get_info=ALL) # LDAP server
 c = Connection(server,'Microsoft\\administrator','password', auto_bind=True) # Connection and calling password from adminpass function
@@ -25,6 +24,9 @@ for entry in c.entries: # to get  all users
    #print (user) # print user
    username=str(user)# store it as string
    V6=username+".V6" # Add V6 to username because each username has folder ends with .V6 
+         
+   #folder='C:\\Users\\MMusa\\Desktop\\c' # Roaming Profiles
+
    folder='C:\\Users\\MMusa\\Desktop\\c\\'+V6 # Folder now will have username +.V6
    print (folder)
    input("Press Enter to continue...")
